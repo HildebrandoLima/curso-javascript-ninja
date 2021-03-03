@@ -70,25 +70,17 @@ Crie uma função com as seguintes características:
 */
 function argument ( x, y, z ) {
     if ( x != null && y == null && z == null ) {
-        return x;
+        return x; // argument(55); | 55
     } else if ( x != null && y != null && z == null ) {
-        return x + y;
+        return x + y; // argument(45, 78); | 123
     } else if ( x != null && y != null && z != null ) {
-	    return (x + y) / z;
+	    return (x + y) / z; // argument(34, 67, 90); | 1.1222222222222222
     } else if ( x == null && y == null && z == null ) {
-        return false;
+        return false; // argument(); | false
     } else {
         return null;
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-argument(55);
-55
-argument(45, 78);
-123
-argument(34, 67, 90);
-1.1222222222222222
-argument();
-false
 ```

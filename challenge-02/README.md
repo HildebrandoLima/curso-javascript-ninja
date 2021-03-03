@@ -40,11 +40,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function argument( x, y, z ) {
-  if ( x == null || y == null || z == null ) {
-    return "Preeencha todos os campos!";
-  } else {
-    return ( x * y * z ) + 2;
+  if ( x === undefined || y === undefined || z === undefined ) {
+    return 'Preeencha todos os campos!';
   }
+    return ( x * y * z ) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -69,18 +68,23 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argument ( x, y, z ) {
-    if ( x != null && y == null && z == null ) {
-        return x; // argument(55); | 55
-    } else if ( x != null && y != null && z == null ) {
-        return x + y; // argument(45, 78); | 123
-    } else if ( x != null && y != null && z != null ) {
-	    return (x + y) / z; // argument(34, 67, 90); | 1.1222222222222222
-    } else if ( x == null && y == null && z == null ) {
-        return false; // argument(); | false
+    if ( x !== undefined && y === undefined && z === undefined ) {
+        return x;
+    } else if ( x !== undefined && y !== undefined && z === undefined ) {
+        return x + y;
+    } else if ( x !== undefined && y !== undefined && z !== undefined ) {
+	      return (x + y) / z;
+    } else if ( x === undefined && y === undefined && z === undefined ) {
+        return false;
     } else {
         return null;
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+argument(55); | 55
+argument(45, 78); | 123
+argument(34, 67, 90); | 1.1222222222222222
+argument(); | false
+
 ```

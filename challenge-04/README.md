@@ -122,20 +122,21 @@ citado acima, no lugar de "pessoas".
 */
 
 carro.addPessoas = function( numPessoas ) {
-  var totalPessoas = carro.qtdPessoas + numPessoas;  
-  if ( carro.qtdPessoas === carro.assentos ) {
+  var totalPessoas = carro.quantidadePessoas + numPessoas;  
+  if ( carro.quantidadePessoas === carro.assentos && totalPessoas <= carro.assentos ) {
     return 'O carro já está lotado!';
   }
 
   if ( totalPessoas > carro.assentos ) {
-    var cabemPessoas = carro.assentos - carro.qtdPessoas;
+    var cabemPessoas = carro.assentos - carro.quantidadePessoas;
     var plu_sin1 = cabemPessoas === 1 ? 'cabe' : 'cabem';
     var plu_sin2 = cabemPessoas === 1 ? 'pessoa' : 'pessoas';
     return 'Só ' + plu_sin1 + ' mais [' + cabemPessoas + '] ' + plu_sin2 + '!';
   }
 
-  carro.qtdPessoas *= numPessoas
-  return 'Já temos [' + totalPessoas + '] pessoas no carro!';
+  carro.quantidadePessoas *= numPessoas
+  var plu_sin = totalPessoas === 1 ? 'pessoa' : 'pessoas';
+  return 'Já temos [' + totalPessoas + '] ' + plu_sin + ' no carro!';
 };
 
 /*
@@ -170,20 +171,27 @@ carro.obterCor(); // Musgo
 carro.obterMarcaModelo(); // 'Esse carro é um [Chevrolet] ['Onix 1.0 LS']'
 
 // Adicione 2 pessoas no carro.
-?
+
+carro.addPessoas(2); // 'Já temos [2] pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-?
+
+carro.addPessoas(4); // 'Já temos [4] pessoas no carro!'
 
 // Faça o carro encher.
-?
+
+carro.addPessoas(3); // 'Já temos [5] pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-?
+
+carro.addPessoas(-4); // 'Já temos [1] pessoa no carro!'
 
 // Adicione 10 pessoas no carro.
-?
+
+carro.addPessoas(10); // 'Só cabem mais [4] pessoas!'
 
 // Quantas pessoas temos no carro?
-?
+
+carro.quantidadePessoas; // 1
+
 ```

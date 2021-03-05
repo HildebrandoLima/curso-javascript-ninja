@@ -54,19 +54,7 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-
-function book( nomeLivro ) {
-  var objLivro = {
-    nomeLivro: 'objLivro.nomeLivro'
-  };
-
-  var complemento = {
-    quantidadePaginas: 'complemento.quantidadePaginas',
-    autor: 'complemento.autor',
-    editora: 'complemento.editora'
-  };
-  return nomeLivro;
-}
+//?
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.

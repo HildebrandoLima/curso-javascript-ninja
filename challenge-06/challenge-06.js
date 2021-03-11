@@ -79,20 +79,24 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 
 function convertToHex( color ) {
 
+  var hexadecimal;
   switch( color ){
-         case 'amarelo':
-                return 'O hexadecimal para a cor [Amrelo] é [#FFFF00].';
-         case 'azul':
-                return 'O hexadecimal para a cor [Azul] é [#0000FF].';
-         case 'branco':
-                return 'O hexadecimal para a cor [Branco] é [ #FFFFFF].';
-         case 'verde':
-                return 'O hexadecimal para a cor [Verde] é [#008000].';
-         case 'vermelho':
-                return 'O hexadecimal para a cor [Vermelho] é [#FF0000].';
-         default:
-                return 'Não temos o equivalente hexadecimal para [' + color + '].';
-  }
+      case 'amarelo':
+          hexadecimal = '#FFFF00';
+      break;
+      case 'azul':
+          hexadecimal = '#0000FF';
+      break;
+      case 'preto':
+          hexadecimal = '#00000';
+      case 'verde':
+          hexadecimal = '#008000';
+      case 'vermelho':
+            hexadecimal = '#FF0000';
+      default:
+            return 'Não temos o equivalente hexadecimal para [' + color + '].';
+      }
+      return 'O hexadecimal para a cor [' + color + '] é [' + hexadecimal + '].';
 }
 
 /*

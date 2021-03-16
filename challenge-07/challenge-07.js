@@ -8,7 +8,10 @@ var array = [functon(), 2, { test: 'test' }, 4.5, 'array'];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-// ?
+
+function addItem( array ) {
+  return array
+}
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3

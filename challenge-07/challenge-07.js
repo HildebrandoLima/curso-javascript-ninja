@@ -1,7 +1,8 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
+
+var array = [functon(), 2, { test: 'test' }, 4.5, 'array'];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.

@@ -1,7 +1,7 @@
 /*
 Envolva todo o conteúdo desse arquivo em uma IIFE.
 */
-
+asasasfgthyt
 /*
 Crie um objeto chamado `person`, com as propriedades:
     `name`: String

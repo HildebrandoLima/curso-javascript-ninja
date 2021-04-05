@@ -119,6 +119,7 @@
   console.log( myName.reverse().join('') );
 
   console.log( '\nAgora em ordem alfabética:' );
+  
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */

@@ -1,3 +1,4 @@
+(function(){})();
 /*
 Envolva todo o código desse desafio em uma IIFE.
 */

@@ -1,4 +1,5 @@
 (function(){
+  'use strict';
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
   2. Adicione a diretiva 'use strict';
@@ -15,7 +16,11 @@
   E assim por diante, até a última.
   */
   console.log( 'As letras do seu nome:' );
-  // ?
+  var name = 'Fulano';
+  for( var i = 0, len = name.length; i < len; i++ ) {
+    console.log( '[' + name[i] + '] é a [' + ( i + 1 ) + ']ª letra do meu nome.' );  
+  }
+  
 
   /*
   - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -30,7 +35,13 @@
   console.log para cada formato.
   */
   console.log( '\nNome convertido à partir de um slug:' );
-  // ?
+  var fullName = 'Fulano-de-tal';
+  var newfullName = fullName.split('-').map(function(){
+    return name.charAt(0).toUppCase() + name.slice(1);
+  }).join(' ');
+
+  console.log( fullName );
+  console.log( newfullName );
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando

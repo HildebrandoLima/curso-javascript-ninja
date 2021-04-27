@@ -53,21 +53,26 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log( '\nMeus amigos:' );
-  // ?
+  var names = [ 'João', 'Maria', 'Roberto', 'Pedro', 'Marcos' ];
+  var reduce = names.reduce(function(acumulado, atual, index){
+    var separator = names.length - 1 == index ? ' e ' : ', ';
+    return acumulado + separator + atual;
+  }).concat( ' são meus amigos.' );
+  console.log( reduce );
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
-  // ?
+  console.log( 'Roberto'.replace( 'to', 'ta' ) );
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
   faz a busca do final para o início da string.
   */
   console.log( '\nParte de uma string:' );
-  // ?
+  console.log( '\Fernando'.substring( 8 ,3 ) );
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -79,6 +84,11 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-  // ?
+  var myName = 'Yamete';
+  var myNewName = [];
+  for( var i = 0; len = myName.length; i < len; i++ ) {
+    myName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUppCase() );
+  }
+  console.log( myNewName.join('') );
 
 })();

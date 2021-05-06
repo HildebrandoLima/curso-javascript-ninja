@@ -47,7 +47,7 @@
   }
   
   function handleClickOperation() {
-    removeLastItemIftIsAnOperator();
+    removeLastItemIftIsAnOperator( $visor.value );
     $visor.value += this.value;
   }
   
@@ -55,22 +55,41 @@
     $visor.value = 0;
   }
   
-  function isLastItemAnOperation() {
-    var operations = [ '+', '-', 'x', '/' ];
-    var lastItem = $visor.value.split('').pop();
+  function isLastItemAnOperation( number ) {
+    var operations = [ '+', '-', 'x', '÷' ];
+    var lastItem = number.split('').pop();
     return operations.some(function( operator ) {
       return operator === lastItem
     });
   }
   
-  function removeLastItemIftIsAnOperator() {
-    if( isLastItemAnOperation( operations ) ) {
-      $visor.value = $visor.value.slice(0, -1);
+  function removeLastItemIftIsAnOperator( number ) {
+    if( isLastItemAnOperation( number ) ) {
+      return number.slice(0, -1);
     }
+    return number;
   }
   
   function handleClickEqual() {
     removeLastItemIftIsAnOperator();
+    var allValues = $visor.value.split(/(?:\d+)|[+x÷-]?/g);
+    var result = allValues.reduce(function(accumulated, actual)) {
+      var firtsValue = accumulated.slice( 0, -1 );
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIftIsAnOperator( actual );
+      var lastOperator = isLastItemAnOperation( actual ) ? actual.split('').pop() : false;
+      switch( operator ) {
+        case '+':
+            return ( Number( firtsValue ) + Number( lastValue ) ) + lastOperator;
+        case '-':
+            return ( Number( firtsValue ) - Number( lastValue ) ) + lastOperator;
+        case 'x':
+            return ( Number( firtsValue ) x Number( lastValue ) ) + lastOperator;
+        case '÷':
+            return ( Number( firtsValue ) / Number( lastValue ) ) + lastOperator;
+      }
+    });
+    $visor.value = result;
   }
 
 })(window, document);

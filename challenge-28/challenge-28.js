@@ -27,5 +27,91 @@
     - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
     adicionar as informações em tela.
     */
+    function DOM(elements) {
+    this.element = document.querySelectorAll(elements);
+  }
+  
+  DOM.prototype.on = function on(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    });
+  };
+  
+  DOM.prototype.off = function off(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    });
+  };
+  
+  DOM.prototype.get = function get() {
+    return this.element;
+  };
+  
+  DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.element, arguments);
+  };
+  
+  DOM.prototype.isArrray = function isArrray(param) {
+    return Array.prototype.toString().call(param) === '[object Array]';
+  };
+  
+  DOM.prototype.isObject = function isObject(param) {
+    return Array.prototype.toString().call(param) === '[object Object]';
+  };
+  
+  DOM.prototype.isFunction = function isFunction(param) {
+    return Array.prototype.toString().call(param) === '[object Function]';
+  };
+  
+  DOM.prototype.isNumber = function isNumber(param) {
+    return Array.prototype.toString().call(param) === '[object Number]';
+  };
+  
+  DOM.prototype.isString = function isString(param) {
+    return Array.prototype.toString().call(param) === '[object String]';
+  };
+  
+  DOM.prototype.isBoolean = function isBoolean(param) {
+    return Array.prototype.toString().call(param) === '[object Boolean]';
+  };
+  
+  DOM.prototype.isNull = function isNull(param) {
+    return Array.prototype.toString().call(param) === '[object Null]' || Object.prototype.toString().call(param) === '[object undefined]';
+  };
+  
+  var $formCEP = nre DOM('[data-js="form-cep"]');
+  $formCEP.on('submit', handleSubmitFormCEP);
+  function handleSubmitFormCEP(event){
+  event.preventDefault();
+    var ajax = new XMLHttpRequest();
+    ajax.open('GET', 'http://cep.correiocontrol.com.br/[CEP].json');
+    ajax.addEventListener('readytatechange', handleReadyStateCahnge);
+  }
+  
+  
   
 })();

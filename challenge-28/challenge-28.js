@@ -139,7 +139,7 @@
   }
   
   funtion isRequestOk(){
-    retrun ajax.readyState === 4 && ajax.status === 200;
+    return ajax.readyState === 4 && ajax.status === 200;
   }
   
   function fillCEPFields() {

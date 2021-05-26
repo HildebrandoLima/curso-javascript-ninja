@@ -35,5 +35,15 @@
   E aqui nesse arquivo, faça a lógica para cadastrar os carros, em um módulo
   que será nomeado de "app".
   */
+  
+  function app() {
+    return {
+      init: function() {
+        
+      }
+    };
+  }
+  
+  app.().init();
 
 })();
